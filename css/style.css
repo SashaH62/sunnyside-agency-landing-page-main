@@ -1,0 +1,362 @@
+/* Universal Styling */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-size: 16px;
+  color: hsl(213, 9%, 39%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+}
+
+p {
+  line-height: 2;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  width: 50%;
+  min-height: 600px;
+}
+
+@media (max-width: 768px) {
+  .column {
+    width: 100%;
+  }
+}
+
+/* Nav Bar */
+.nav {
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  width: 15%;
+}
+
+.nav-items,
+.nav-item {
+  display: inline-block;
+}
+
+.nav-item a {
+  padding: 1rem 1.5rem;
+}
+
+.nav-item a:hover {
+  color: hsl(212, 27%, 19%);
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-item:last-child a {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 25px;
+  color: hsl(212, 27%, 19%);
+  text-transform: uppercase;
+  font-family: "Fraunces", serif;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-item:last-child a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.nav-item:hover {
+}
+
+/* Banner Section */
+.hero-section {
+  height: 100vh;
+  background-image: url(/images/desktop/image-header.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-content {
+  position: relative;
+  top: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-section h1 {
+  color: #fff;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+}
+
+.hero-section img {
+  width: 5%;
+  height: auto;
+}
+
+/* Transform & Standout Section */
+
+#transformation .image-container {
+  background-image: url(/images/desktop/image-transform.jpg);
+}
+
+#standOut .image-container {
+  background-image: url(/images/desktop/image-stand-out.jpg);
+}
+
+.image-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.content {
+  padding: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 849px) {
+  .content {
+    padding: 3rem;
+    text-align: center;
+  }
+}
+
+.content h2 {
+  color: hsl(212, 27%, 19%);
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .content h2 {
+    font-size: 2rem;
+  }
+}
+
+.content p {
+  margin-bottom: 2rem;
+  line-height: 2;
+}
+
+.learn-more {
+  font-family: "Fraunces", serif;
+  text-transform: uppercase;
+  color: hsl(212, 27%, 19%);
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 900;
+  display: inline-block;
+}
+
+#transformation a.learn-more:hover {
+  border-bottom: 5px solid hsl(51, 100%, 49%);
+}
+
+#standOut {
+  flex-direction: row-reverse;
+}
+
+/* Services Section */
+
+#services .column {
+  min-height: 600px;
+  padding: 3.5rem;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+}
+
+.design,
+.photography {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.design {
+  background-image: url(/images/desktop/image-graphic-design.jpg);
+}
+
+.photography {
+  background-image: url(/images/desktop/image-photography.jpg);
+}
+
+.service-content {
+  text-align: center;
+  max-width: 70%;
+}
+
+@media only screen and (max-width: 849px) {
+  .service-content {
+    max-width: 100%;
+  }
+}
+
+.service-content h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.design {
+  color: hsl(167, 40%, 24%);
+}
+
+.photography {
+  color: hsl(198, 62%, 26%);
+}
+
+/* Testimonial Section */
+
+#testimonials {
+  padding: 6.25rem;
+}
+
+#testimonials .container {
+  justify-content: space-between;
+}
+
+#testimonials h3 {
+  font-size: 1.25rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin-bottom: 4rem;
+}
+
+.testimonial {
+  max-width: 30%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .testimonial {
+    max-width: 100%;
+  }
+}
+
+.testimonial img {
+  border-radius: 50%;
+  flex-basis: 25%;
+}
+
+.testimonial h4 {
+  font-size: 1.2rem;
+  color: hsl(212, 27%, 19%);
+}
+
+.testimonial-quote {
+  padding: 3.5rem 0;
+}
+
+/* Portfolio Section */
+
+#portfolio.container {
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+  #portfolio.container {
+    flex-wrap: wrap;
+  }
+
+  .portfolio-item {
+    flex-basis: 50%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+  }
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+}
+
+/* Footer Section */
+
+footer.container {
+  background-color: #90d4c5;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1rem;
+}
+
+.footer-logo {
+  filter: invert(51%) sepia(15%) saturate(1156%) hue-rotate(118deg)
+    brightness(92%) contrast(85%);
+  width: 200px;
+}
+
+.footer-nav {
+  padding: 2rem 0 5rem;
+}
+
+.footer-nav li {
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+.footer-nav li a {
+  color: hsl(168, 34%, 41%);
+}
+
+.footer-nav li a:hover {
+  color: #fff;
+}
+
+.social-icons a {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Attribution */
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
