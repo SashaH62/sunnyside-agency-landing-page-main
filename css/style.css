@@ -19,7 +19,7 @@ html {
 
 body {
   font-family: "Barlow", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--primary-dark-blue);
   background: #fffbf8;
 }
@@ -71,8 +71,8 @@ a {
 }
 
 .nav-logo {
-  width: 10%;
-  max-width: 170px;
+  width: 12%;
+  max-width: 200px;
 }
 
 .nav-items,
@@ -91,11 +91,13 @@ a {
 
 .nav-item:last-child a {
   background-color: rgba(255, 255, 255, 1);
-  border-radius: 25px;
+  border-radius: 30px;
   color: var(--primary-dark-blue);
   text-transform: uppercase;
   font-family: "Fraunces", serif;
   transition: all 0.2s ease-in-out;
+  padding: 1rem 2rem;
+  margin-left: 1rem;
 }
 
 .nav-item:last-child a:hover {
@@ -189,7 +191,7 @@ a {
 
 /* Banner Section */
 .hero-section {
-  height: 85vh;
+  height: 90vh;
   background-image: url(/images/desktop/image-header.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -396,7 +398,7 @@ a {
 /* Testimonial Section */
 
 #testimonials {
-  padding: 6.25rem;
+  padding: 10rem 6.25rem;
 }
 
 #testimonials .container {
@@ -404,16 +406,17 @@ a {
 }
 
 #testimonials h3 {
+  color: var(--primary-text);
   font-size: 1.25rem;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 10px;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 }
 
 .testimonial {
-  max-width: 25%;
-  max-width: 320px;
+  max-width: 30%;
+  max-width: 350px;
   text-align: center;
   margin-bottom: 2rem;
 }
