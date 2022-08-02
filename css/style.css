@@ -4,6 +4,7 @@
   --yellow: hsl(51, 100%, 49%);
   --primary-dark-blue: hsl(212, 27%, 19%);
   --soft-red: hsl(7, 99%, 70%);
+  --primary-text: hsl(210, 4%, 67%);
 }
 
 * {
@@ -19,7 +20,7 @@ html {
 body {
   font-family: "Barlow", sans-serif;
   font-size: 16px;
-  color: hsl(213, 9%, 39%);
+  color: var(--primary-text);
 }
 
 h1,
@@ -150,18 +151,12 @@ a {
 }
 
 #mobile-menu a {
-  color: hsl(213, 9%, 39%);
+  color: var(--primary-text);
 }
 
 #mobile-menu .nav-item:last-child a {
   background-color: var(--yellow);
   color: var(--primary-dark-blue);
-}
-
-@media (min-width: 768px) {
-  #mobile-menu {
-    opacity: 0;
-  }
 }
 
 @media (max-width: 768px) {
@@ -174,10 +169,16 @@ a {
   }
 }
 
+@media (min-width: 768px) {
+  #mobile-menu {
+    opacity: 0 !important;
+  }
+}
+
 /* Banner Section */
 .hero-section {
   height: 100vh;
-  background-image: url(/sunnyside-agency-landing-page-main/images/desktop/image-header.jpg);
+  background-image: url(/images/desktop/image-header.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -216,18 +217,23 @@ a {
 /* Transform & Standout Section */
 
 #transformation .image-container {
-  background-image: url(/sunnyside-agency-landing-page-main/images/desktop/image-transform.jpg);
+  background-image: url(/images/desktop/image-transform.jpg);
 }
 
 #standOut .image-container {
-  background-image: url(/sunnyside-agency-landing-page-main/images/desktop/image-stand-out.jpg);
+  background-image: url(/images/desktop/image-stand-out.jpg);
+}
+
+.mobile-img {
+  display: none;
+  width: 100%;
+  height: auto;
 }
 
 .image-container {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  aspect-ratio: 1/1;
 }
 
 .content {
@@ -253,7 +259,7 @@ a {
 
 @media only screen and (max-width: 768px) {
   .content h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -287,7 +293,7 @@ a {
   transition: 0.2s all ease-in-out;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 849px) {
   .learn-more:before {
     left: 50%;
     transform: translateX(-50%);
@@ -315,6 +321,10 @@ a {
   #standOut {
     flex-direction: column-reverse;
   }
+
+  .mobile-img {
+    display: block;
+  }
 }
 
 /* Services Section */
@@ -336,11 +346,11 @@ a {
 }
 
 .design {
-  background-image: url(/sunnyside-agency-landing-page-main/images/desktop/image-graphic-design.jpg);
+  background-image: url(/images/desktop/image-graphic-design.jpg);
 }
 
 .photography {
-  background-image: url(/sunnyside-agency-landing-page-main/images/desktop/image-photography.jpg);
+  background-image: url(/images/desktop/image-photography.jpg);
 }
 
 .service-content {
@@ -351,6 +361,10 @@ a {
 @media only screen and (max-width: 849px) {
   .service-content {
     max-width: 100%;
+  }
+
+  #services .column {
+    padding: 5rem 2rem;
   }
 }
 
@@ -458,7 +472,7 @@ a {
 
 .portfolio-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 /* Footer Section */
