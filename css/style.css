@@ -1,9 +1,19 @@
 /* Universal Styling */
 
+:root {
+  --yellow: hsl(51, 100%, 49%);
+  --primary-dark-blue: hsl(212, 27%, 19%);
+  --soft-red: hsl(7, 99%, 70%);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -18,6 +28,7 @@ h3,
 h4 {
   font-family: "Fraunces", serif;
   font-weight: 900;
+  font-size: 14px;
 }
 
 p {
@@ -42,6 +53,7 @@ a {
 @media (max-width: 768px) {
   .column {
     width: 100%;
+    min-height: 0;
   }
 }
 
@@ -57,7 +69,7 @@ a {
 }
 
 .nav-logo {
-  width: 15%;
+  max-width: 150px;
 }
 
 .nav-items,
@@ -70,14 +82,14 @@ a {
 }
 
 .nav-item a:hover {
-  color: hsl(212, 27%, 19%);
+  color: var(--primary-dark-blue);
   transition: all 0.2s ease-in-out;
 }
 
 .nav-item:last-child a {
   background-color: rgba(255, 255, 255, 1);
   border-radius: 25px;
-  color: hsl(212, 27%, 19%);
+  color: var(--primary-dark-blue);
   text-transform: uppercase;
   font-family: "Fraunces", serif;
   transition: all 0.2s ease-in-out;
@@ -88,13 +100,84 @@ a {
   color: #fff;
 }
 
-.nav-item:hover {
+.mobile-menu-icon {
+  display: none;
+}
+
+.mobile-menu-icon:hover {
+  cursor: pointer;
+}
+
+#mobile-menu {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translatex(-50%);
+  padding: 25px;
+  width: 85%;
+  background: #fff;
+  z-index: 1;
+  display: block;
+  opacity: 0;
+  transition: 0.2s all ease-in-out;
+}
+
+#mobile-menu:before {
+  content: "";
+  display: block;
+  background-color: #fff;
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  top: -25px;
+  right: 0;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+#mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#mobile-menu ul li {
+  padding: 15px;
+}
+
+#mobile-menu ul li:last-child {
+  padding: 30px;
+}
+
+#mobile-menu a {
+  color: hsl(213, 9%, 39%);
+}
+
+#mobile-menu .nav-item:last-child a {
+  background-color: var(--yellow);
+  color: var(--primary-dark-blue);
+}
+
+@media (min-width: 768px) {
+  #mobile-menu {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .nav-items {
+    display: none;
+  }
 }
 
 /* Banner Section */
 .hero-section {
   height: 100vh;
-  background-image: url(/images/desktop/image-header.jpg);
+  background-image: url(/sunnyside-agency-landing-page-main/images/desktop/image-header.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -133,17 +216,18 @@ a {
 /* Transform & Standout Section */
 
 #transformation .image-container {
-  background-image: url(/images/desktop/image-transform.jpg);
+  background-image: url(/sunnyside-agency-landing-page-main/images/desktop/image-transform.jpg);
 }
 
 #standOut .image-container {
-  background-image: url(/images/desktop/image-stand-out.jpg);
+  background-image: url(/sunnyside-agency-landing-page-main/images/desktop/image-stand-out.jpg);
 }
 
 .image-container {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  aspect-ratio: 1/1;
 }
 
 .content {
@@ -155,13 +239,13 @@ a {
 
 @media only screen and (max-width: 849px) {
   .content {
-    padding: 3rem;
+    padding: 4rem 3rem;
     text-align: center;
   }
 }
 
 .content h2 {
-  color: hsl(212, 27%, 19%);
+  color: var(--primary-dark-blue);
   font-size: 3rem;
   font-weight: 900;
   margin-bottom: 2rem;
@@ -181,19 +265,56 @@ a {
 .learn-more {
   font-family: "Fraunces", serif;
   text-transform: uppercase;
-  color: hsl(212, 27%, 19%);
+  color: var(--primary-dark-blue);
   text-decoration: none;
   font-size: 1.125rem;
+  margin-left: 10px;
   font-weight: 900;
-  display: inline-block;
+  position: relative;
+  z-index: 2;
 }
 
-#transformation a.learn-more:hover {
-  border-bottom: 5px solid hsl(51, 100%, 49%);
+.learn-more:before {
+  content: "";
+  width: 120%;
+  height: 10px;
+  display: block;
+  border-radius: 5px;
+  position: absolute;
+  bottom: -5%;
+  z-index: -1;
+  opacity: 0;
+  transition: 0.2s all ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .learn-more:before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+#transformation .learn-more:before {
+  background-color: var(--yellow);
+}
+
+#standOut .learn-more:before {
+  background-color: var(--soft-red);
+}
+
+.learn-more:hover:before {
+  opacity: 1;
 }
 
 #standOut {
   flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  #transformation,
+  #standOut {
+    flex-direction: column-reverse;
+  }
 }
 
 /* Services Section */
@@ -215,11 +336,11 @@ a {
 }
 
 .design {
-  background-image: url(/images/desktop/image-graphic-design.jpg);
+  background-image: url(/sunnyside-agency-landing-page-main/images/desktop/image-graphic-design.jpg);
 }
 
 .photography {
-  background-image: url(/images/desktop/image-photography.jpg);
+  background-image: url(/sunnyside-agency-landing-page-main/images/desktop/image-photography.jpg);
 }
 
 .service-content {
@@ -270,12 +391,6 @@ a {
   margin-bottom: 2rem;
 }
 
-@media only screen and (max-width: 768px) {
-  .testimonial {
-    max-width: 100%;
-  }
-}
-
 .testimonial img {
   border-radius: 50%;
   flex-basis: 25%;
@@ -283,11 +398,39 @@ a {
 
 .testimonial h4 {
   font-size: 1.2rem;
-  color: hsl(212, 27%, 19%);
+  color: var(--primary-dark-blue);
 }
 
 .testimonial-quote {
   padding: 3.5rem 0;
+}
+
+@media only screen and (max-width: 768px) {
+  #testimonials {
+    padding: 5rem 2rem;
+  }
+
+  #testimonials h3 {
+    font-size: 1.125rem;
+    letter-spacing: 8px;
+  }
+
+  .testimonial {
+    max-width: 100%;
+    margin-bottom: 5rem;
+  }
+
+  .testimonial:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .testimonial img {
+    max-width: 20%;
+  }
+
+  .testimonial-quote {
+    padding: 1.75rem 0;
+  }
 }
 
 /* Portfolio Section */
@@ -295,6 +438,10 @@ a {
 #portfolio.container {
   flex-wrap: nowrap;
   width: 100%;
+}
+
+.portfolio-item {
+  width: 25%;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -347,8 +494,15 @@ footer.container {
 }
 
 .social-icons a {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin: 0 1rem;
+}
+
+.social-icons img {
+  transition: 0.2s all ease-in-out;
+}
+
+.social-icons img:hover {
+  filter: brightness(0) invert(1);
 }
 
 /* Attribution */
