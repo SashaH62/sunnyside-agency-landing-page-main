@@ -4,7 +4,7 @@
   --yellow: hsl(51, 100%, 49%);
   --primary-dark-blue: hsl(212, 27%, 19%);
   --soft-red: hsl(7, 99%, 70%);
-  --primary-text: hsl(210, 4%, 67%);
+  --primary-text: hsl(232, 10%, 55%);
 }
 
 * {
@@ -20,7 +20,7 @@ html {
 body {
   font-family: "Barlow", sans-serif;
   font-size: 18px;
-  color: var(--primary-dark-blue);
+  color: var(--primary-text);
   background: #fffbf8;
 }
 
@@ -34,7 +34,7 @@ h4 {
 }
 
 p {
-  line-height: 2;
+  line-height: 1.75;
 }
 
 a {
@@ -251,10 +251,17 @@ a {
 }
 
 .content {
-  padding: 8rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+#transformation .content {
+  padding: 8rem 6rem 8rem 10rem;
+}
+
+#standOut .content {
+  padding: 8rem 10rem 8rem 6rem;
 }
 
 @media only screen and (max-width: 849px) {
@@ -279,7 +286,7 @@ a {
 
 .content p {
   margin-bottom: 2rem;
-  line-height: 2;
+  line-height: 1.75;
 }
 
 .learn-more {
@@ -398,7 +405,7 @@ a {
 /* Testimonial Section */
 
 #testimonials {
-  padding: 10rem 6.25rem;
+  padding: 9rem;
 }
 
 #testimonials .container {
